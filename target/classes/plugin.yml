@@ -1,0 +1,12 @@
+name: BossCreator
+version: 1.0
+main: com.BossCreator.Main
+api-version: 1.16
+softdepend: [HolographicDisplays, PlaceholderAPI]
+commands:
+  createboss:
+    usage: /createboss <id>
+    description: creating and spawn boss in player location
+  spawnboss:
+    usage: /spawnboss <id>
+    description: spawn boss in cfg location

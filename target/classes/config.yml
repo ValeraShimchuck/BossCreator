@@ -1,0 +1,17 @@
+timedisplay:
+  offset:
+    x: 0
+    y: 2
+    z: 0
+  messages:
+    line0: 'Привет, %_player_name%!'
+    line1: '%_boss_name% появится через %_time%.'
+killboss:
+  messages:
+    line0: 'Босс %boss_name% был повержен!'
+    line1: 'Топ 3 игроков по урону:'
+    line2: '%player1% нанес %damage1%'
+    line3: '%player2% нанес %damage2%'
+    line4: '%player3% нанес %damage3%'
+  killernull: 'больше ни кто не нанес урон!'
+  topcount: 3
