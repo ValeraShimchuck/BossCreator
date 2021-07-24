@@ -1,5 +1,5 @@
 name: BossCreator
-version: realise
+version: release
 main: com.BossCreator.Main
 api-version: 1.16
 softdepend: [HolographicDisplays, PlaceholderAPI]
