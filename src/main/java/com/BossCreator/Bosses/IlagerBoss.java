@@ -269,14 +269,20 @@ public class IlagerBoss extends EntityPillager implements IBoss {
     public void deleteHologram(Player player) {
         if(holograms.containsKey(player)){
             holograms.get(player).delete();
-            holograms.remove(player);
+
         }
     }
 
     @Override
     public void deleteAllHolograms() {
-        for(Player p:holograms.keySet()){
+        List<Player> playerList = new ArrayList<>();
+        Set<Player> playerSet = holograms.keySet();
+        for(Player p:playerSet){
+            playerList.add(p);
+        }
+        for(Player p:playerList){
             deleteHologram(p);
+            holograms.remove(p);
         }
     }
 
