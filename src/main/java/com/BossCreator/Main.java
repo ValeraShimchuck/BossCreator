@@ -4,6 +4,9 @@ import com.BossCreator.Bosses.BossManager;
 import com.BossCreator.Placeholders.BossExpansion;
 import com.BossCreator.Placeholders.HolographicManager;
 import com.BossCreator.commands.CreateBoss;
+import com.BossCreator.commands.DeleteBoss;
+import com.BossCreator.commands.SpawnBoss;
+import com.BossCreator.commands.TeleportToBoss;
 import com.BossCreator.events.*;
 import com.BossCreator.mobs.MobManager;
 import me.clip.placeholderapi.PlaceholderAPI;
@@ -61,7 +64,12 @@ public class Main extends JavaPlugin {
         pm.registerEvents(new EntityDamage(),this);
         pm.registerEvents(new EntityDamageByEntity(),this);
         pm.registerEvents(new PlayerQuitJoin(this),this);
+
         getCommand("createboss").setExecutor(new CreateBoss());
+        getCommand("spawnboss").setExecutor(new SpawnBoss());
+        getCommand("tpboss").setExecutor(new TeleportToBoss());
+        getCommand("deleteboss").setExecutor(new DeleteBoss());
+
         bossManager = new BossManager();
         mobManager = new MobManager();
         hlManager.registerPlaceholders();

@@ -1,5 +1,5 @@
 name: BossCreator
-version: 1.0
+version: rc-2
 main: com.BossCreator.Main
 api-version: 1.16
 softdepend: [HolographicDisplays, PlaceholderAPI]
@@ -10,3 +10,9 @@ commands:
   spawnboss:
     usage: /spawnboss <id>
     description: spawn boss in cfg location
+  tpboss:
+    usage: /tpboss <id>
+    description: teleport to boss
+  deleteboss:
+    usage: /deleteboss <id>
+    description: delete boss

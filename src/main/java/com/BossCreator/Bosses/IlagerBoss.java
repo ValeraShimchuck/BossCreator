@@ -453,8 +453,10 @@ public class IlagerBoss extends EntityPillager implements IBoss {
     @Override
     public void spawnBoss() {
         if(isAlive){
-            boss.getBukkitEntity().remove();
+            mobEntity.remove();
+            mobEntity=null;
             boss =null;
+            isAlive=false;
         }
         worldServer.addEntity(new IlagerBoss(worldServer));
     }
@@ -462,12 +464,14 @@ public class IlagerBoss extends EntityPillager implements IBoss {
     @Override
     public void spawnBoss(Location location) {
         if(isAlive){
-            boss.getBukkitEntity().remove();
+            mobEntity.remove();
+            mobEntity=null;
             boss =null;
+            isAlive=false;
         }
         IlagerBoss pillager = new IlagerBoss(worldServer);
         pillager.setPosition(location.getX(),location.getY(),location.getZ());
-        worldServer.addEntity(new IlagerBoss(worldServer));
+        worldServer.addEntity(pillager);
     }
 
     @Override
@@ -481,7 +485,10 @@ public class IlagerBoss extends EntityPillager implements IBoss {
             mobEntity = null;
             boss= null;
             isAlive = false;
-
+            time=time.restart();
+            for(Player p:Bukkit.getServer().getOnlinePlayers()){
+                createHologram(p);
+            }
         }
     }
     public static float[] getRotations(Location one, Location two) {

@@ -398,6 +398,7 @@ public class ZombieBoss extends EntityZombie implements IBoss  {
             mobEntity.remove();
             mobEntity=null;
             boss =null;
+            isAlive=false;
         }
         worldServer.addEntity(new ZombieBoss(worldServer));
 
@@ -408,6 +409,7 @@ public class ZombieBoss extends EntityZombie implements IBoss  {
             mobEntity.remove();
             mobEntity=null;
             boss =null;
+            isAlive=false;
         }
         ZombieBoss zombie = new ZombieBoss(worldServer);
         zombie.setPosition(location.getX(),location.getY(),location.getZ());
@@ -428,6 +430,10 @@ public class ZombieBoss extends EntityZombie implements IBoss  {
             isAlive = false;
             for(LivingEntity mob:plugin.mobManager.getMob(0).getEntities().keySet()){
                 mob.remove();
+            }
+            time=time.restart();
+            for(Player p:Bukkit.getServer().getOnlinePlayers()){
+                createHologram(p);
             }
         }
     }
