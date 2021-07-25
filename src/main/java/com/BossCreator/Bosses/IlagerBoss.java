@@ -404,7 +404,7 @@ public class IlagerBoss extends EntityPillager implements IBoss {
                                     Location location = entity.getLocation();
                                     location.setY(mobEntity.getLocation().getY());
                                     walkToLocation(mobEntity,location,1.0D);
-
+                                    break;
                                 }
                             }
 
